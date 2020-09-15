@@ -1,12 +1,30 @@
-ЯСММ ВАЫВАИЫВАТАЫПТАВПТВАТВАТВА СЧ СЯЧААМВЫААМВЫАМВА ЯЧС ЫВ ФВАМЫВА ЫВМ ЫВА ЫВАЫСММ ЦувэмуцпмЦУПМцуипмФуПЕИАЫР Р
-ЧМИ 
- СС Ч  Я ЧСЯЧ     ССС   СС С СС  Ч            СПШМР СЛАНВГОД ВГ ЛДПСГ ЛДСПЕГ ДНАГД ПСНРБИ Т Ь
+const account = {
+  owner: 'Mango',
+  balance: 24000,
+  discount: 0.1,
+  orders: ['order-1', 'order-2', 'order-3'],
+  changeDiscount(value) {
+    this.discount = value; // Write code in this line
+  },
+  showOrders() {
+    return this.orders; // Write code in this line
+  },
+  addOrder(cost, order) {
+    this.balance -= cost; // Write code in this line
+    this.orders.push(order); // Write code in this line
+  },
+};
+const copyAccount = Object.assign({}, account);
+copyAccount.orders = [...account.orders];
+// копируем для автотестов ссылочные типы
 
- 
-Ы
-ВАТ Д.РСМ.ЭЩРМЩ.мв
-\А ЫВАА ЫВА * ЫВАА ФВААИЫВАА ИЫВА ЫВА ЫВА ЫВА ЫВА  ЫВАФАФВАФВАФВАФВАФВАА ФВА ФВА ФВА АФВА ФВА ФВА  АФВА ВФА ФВА ФВА ФВА ФЫИФВА ФВА ФВ ФЫА ФВА ФВ ЫВФА ФВАИФВАИФВА ФВА    ыымфва фаа фвва фва афв мв счвафыфвфымфвафыфыафввфвафваифваифв     фввафваа и аи в иваиувауавяваиукимФКУКИц\киЦУПЦУПцупЦКПЦКПйВпмЦКИЦккицИКЦккиЦВУИМХ
+account.changeDiscount(0.15);
+console.log(account.discount); // 0.15
 
+console.log(account.showOrders());
+// ['order-1', 'order-2', 'order-3']
 
-
-\СМЖЭСЖДРМШДЮОИ ЮБРМЮШЖМОИДЮОИБДРДЩК ЪХАВ ММММММ-ЛП  А БГШШШШШШШШШШШШШШШШШШШШШШШШШ\\\ШГ\7ШэГ88Ъ\7МГ=М
+account.addOrder(5000, 'order-4');
+console.log(account.balance); // 19000
+console.log(account.showOrders());
+// ['order-1', 'order-2', 'order-3', 'order-4']
